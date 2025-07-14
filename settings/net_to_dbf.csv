@@ -1,0 +1,9 @@
+net,dbf
+model_link_id,link_id
+bike_access,bikeable
+transit_access,transit
+walk_access,walkable
+drive_access,drivable
+PROJECT_NUMBER,PROJECT_NUMBER
+truck_access,truck
+model_node_id,N
