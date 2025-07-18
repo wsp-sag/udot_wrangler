@@ -1,5 +1,4 @@
 log,net
 MODEL_LINK_ID,model_link_id
-DISTANCE,distance
 NAME,name
 N,model_node_id
