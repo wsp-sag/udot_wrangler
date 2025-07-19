@@ -7,9 +7,7 @@ def get_base_dir(udot_wrangler_base_dir=os.getcwd()):
     d = udot_wrangler_base_dir
     for i in range(3):
         if "udot_data" in os.listdir(d):
-            WranglerLogger.info(
-                "udot Wrangler base directory set as: {}".format(d)
-            )
+            WranglerLogger.info("udot Wrangler base directory set as: {}".format(d))
             return d
         d = os.path.dirname(d)
 
@@ -74,7 +72,7 @@ class UDOT_Parameters(Parameters):
         if "settings_location" in kwargs:
             self.settings_location = kwargs.get("settings_location")
         else:
-            self.settings_location = os.path.join(self.base_dir, "settings")
+            self.settings_location = os.path.join(self.base_dir, ".settings")
 
         if "scratch_location" in kwargs:
             self.scratch_location = kwargs.get("scratch_location")
@@ -90,22 +88,22 @@ class UDOT_Parameters(Parameters):
             self.no_lanes_in_cube = kwargs.get("no_lanes_in_cube")
         else:
             self.no_lanes_in_cube = True
-        
+
         if "no_drive_access_in_cube" in kwargs:
             self.no_drive_access_in_cube = kwargs.get("no_drive_access_in_cube")
         else:
             self.no_drive_access_in_cube = True
-        
+
         if "no_walk_access_in_cube" in kwargs:
             self.no_walk_access_in_cube = kwargs.get("no_walk_access_in_cube")
         else:
             self.no_walk_access_in_cube = True
-        
+
         if "no_bike_access_in_cube" in kwargs:
             self.no_bike_access_in_cube = kwargs.get("no_bike_access_in_cube")
         else:
             self.no_bike_access_in_cube = True
-        
+
         if "no_name_in_cube" in kwargs:
             self.no_name_in_cube = kwargs.get("no_name_in_cube")
         else:
@@ -119,105 +117,104 @@ class UDOT_Parameters(Parameters):
             self.settings_location, "log_to_net.csv"
         )
 
-
         self.output_variables = [
-            'model_link_id',
-            'A',
-            'B',
-            'DISTANCE',
-            'STREET',
-            'ONEWAY',
-            'LINKID',
-            'TAZID',
-            'PATHGRP',
-            'TRK_RSTRCT',
-            'DISTEXCEPT',
-            'RAILSPD',
-            'HOV_LYEAR',
-            'LN_2015',
-            'LN_2019',
-            'TRN_2015',
-            'TRN_2019',
-            'FT_2015',
-            'FT_2019',
-            'FT_P4_EOP3',
-            'SFAC',
-            'CFAC',
-            'SCREN_SML',
-            'SCREN_MED',
-            'SCREN_LRG',
-            'SCREN_MPO',
-            'JEFF_EDIT',
-            'UDOT_FC',
-            'UDOTFCCODE',
-            'UDOT_AT',
-            'TYPE',
-            'PROJFLAG',
-            'PROJ_ID_N',
-            'GEOMETRYSO',
-            'GEOMETRY_1',
-            'SEGID',
-            'TRNSFSRC',
-            'JOINDIST',
-            'NEW',
-            'USE',
-            'REMOVE',
-            'SHAPE_LENG',
-            'GEOMETRY_2',
-            'GEOMETRY_3',
-            'SHAPE_LE_1',
-            'LN23_2028',
-            'TRN23_2028',
-            'FT23_2028',
-            'PASSLANE',
-            'SELGRP',
-            'LN23_2032',
-            'LN23_2042',
-            'LN23_2050',
-            'LN23_2032UF',
-            'LN23_2042UF',
-            'LN23_2050UF',
-            'TL23_2032',
-            'TL23_2042',
-            'TL23_2050',
-            'TL23_2032UF',
-            'TL23_2042UF',
-            'TL23_2050UF',
-            'PL23_2032',
-            'PL23_2042',
-            'PL23_2050',
-            'PL23_2032UF',
-            'PL23_2042UF',
-            'PL23_2050UF',
-            'FT23_2032',
-            'FT23_2042',
-            'FT23_2050',
-            'FT23_2032UF',
-            'FT23_2042UF',
-            'FT23_2050UF',
-            'LN_2023',
-            'FT_2023',
-            'TRN_2023',
-            'PL_2023',
-            'LN_TMP',
-            'TRN_TMP',
-            'FT_TMP',
-            'PL_TMP',
-            'PROJECT_NUMBER',
-            'model_node_id',
-            'X',
-            'Y',
-            'EXTERNAL',
-            'PNR_2015',
-            'PNR_2019',
-            'PNR_2024',
-            'PNR_2030',
-            'PNR_2040',
-            'PNR_2050',
-            'PNR_2030UF',
-            'PNR_2040UF',
-            'PNR_2050UF',
-            'PROJ',
+            "model_link_id",
+            "A",
+            "B",
+            "DISTANCE",
+            "STREET",
+            "ONEWAY",
+            "LINKID",
+            "TAZID",
+            "PATHGRP",
+            "TRK_RSTRCT",
+            "DISTEXCEPT",
+            "RAILSPD",
+            "HOV_LYEAR",
+            "LN_2015",
+            "LN_2019",
+            "TRN_2015",
+            "TRN_2019",
+            "FT_2015",
+            "FT_2019",
+            "FT_P4_EOP3",
+            "SFAC",
+            "CFAC",
+            "SCREN_SML",
+            "SCREN_MED",
+            "SCREN_LRG",
+            "SCREN_MPO",
+            "JEFF_EDIT",
+            "UDOT_FC",
+            "UDOTFCCODE",
+            "UDOT_AT",
+            "TYPE",
+            "PROJFLAG",
+            "PROJ_ID_N",
+            "GEOMETRYSO",
+            "GEOMETRY_1",
+            "SEGID",
+            "TRNSFSRC",
+            "JOINDIST",
+            "NEW",
+            "USE",
+            "REMOVE",
+            "SHAPE_LENG",
+            "GEOMETRY_2",
+            "GEOMETRY_3",
+            "SHAPE_LE_1",
+            "LN23_2028",
+            "TRN23_2028",
+            "FT23_2028",
+            "PASSLANE",
+            "SELGRP",
+            "LN23_2032",
+            "LN23_2042",
+            "LN23_2050",
+            "LN23_2032UF",
+            "LN23_2042UF",
+            "LN23_2050UF",
+            "TL23_2032",
+            "TL23_2042",
+            "TL23_2050",
+            "TL23_2032UF",
+            "TL23_2042UF",
+            "TL23_2050UF",
+            "PL23_2032",
+            "PL23_2042",
+            "PL23_2050",
+            "PL23_2032UF",
+            "PL23_2042UF",
+            "PL23_2050UF",
+            "FT23_2032",
+            "FT23_2042",
+            "FT23_2050",
+            "FT23_2032UF",
+            "FT23_2042UF",
+            "FT23_2050UF",
+            "LN_2023",
+            "FT_2023",
+            "TRN_2023",
+            "PL_2023",
+            "LN_TMP",
+            "TRN_TMP",
+            "FT_TMP",
+            "PL_TMP",
+            "PROJECT_NUMBER",
+            "model_node_id",
+            "X",
+            "Y",
+            "EXTERNAL",
+            "PNR_2015",
+            "PNR_2019",
+            "PNR_2024",
+            "PNR_2030",
+            "PNR_2040",
+            "PNR_2050",
+            "PNR_2030UF",
+            "PNR_2040UF",
+            "PNR_2050UF",
+            "PROJ",
         ]
 
         self.output_link_shp = os.path.join(self.scratch_location, "links.shp")
@@ -276,6 +273,5 @@ class UDOT_Parameters(Parameters):
             "TRNSFSRC",
             "PROJECT_NUMBER",
         ]
-
 
         self.__dict__.update(kwargs)
