@@ -2539,6 +2539,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "cube-wrangler" },
+    { name = "ipykernel" },
 ]
 
 [package.dev-dependencies]
@@ -2565,7 +2566,10 @@ doc = [
 ]
 
 [package.metadata]
-requires-dist = [{ name = "cube-wrangler" }]
+requires-dist = [
+    { name = "cube-wrangler" },
+    { name = "ipykernel", specifier = ">=6.29.5" },
+]
 
 [package.metadata.requires-dev]
 dev = [

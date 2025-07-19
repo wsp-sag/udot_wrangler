@@ -6,7 +6,7 @@ from cube_wrangler import Parameters
 def get_base_dir(udot_wrangler_base_dir=os.getcwd()):
     d = udot_wrangler_base_dir
     for i in range(3):
-        if "udot_data" in os.listdir(d):
+        if ".settings" in os.listdir(d):
             WranglerLogger.info("udot Wrangler base directory set as: {}".format(d))
             return d
         d = os.path.dirname(d)

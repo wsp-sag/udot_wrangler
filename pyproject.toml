@@ -8,12 +8,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "udot-wrangler"
-version = "0.1.0"
+version = "0.1.1"
 description = "Network Wrangler parameters for UDOT"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "cube-wrangler",
+    "ipykernel>=6.29.5",
 ]
 
 [dependency-groups]
