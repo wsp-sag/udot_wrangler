@@ -7,14 +7,16 @@ UDOT Wrangler does require Python 3.7+. If you have a different version of Pytho
 UDOT Wrangler is available on PyPI.
 
 ### Latest Official Version
-Users can install via standard pip command.
+Users can install via standard pip command. _Note: Recommend Python version: 3.10_
 ```bash
 pip install udot-wrangler
 ```
 
-Users can also install via package managers such as uv
+Users can also install via package managers such as uv.
 ```bash
 uv add udot-wrangler
+# if `network-wrangler` is a prerelease
+# uv add udot-wrangler --prerelease=allow
 ```
 
 ### From GitHub
@@ -43,3 +45,8 @@ Then you should be able to install UDOT Wrangler in "develop" mode.
 cd udot_wrangler
 pip install -e .
 ```
+## Example Notebooks
+Example prototype notebooks can be found in the .notebook folder. Examples include
+1. Create a base Network Wrangler scenario with input roadway network.
+2. Create Project Card skeletion with input CUBE LOG.
+3. Create a build scenario and apply project card, write out CUBE roadway network.
