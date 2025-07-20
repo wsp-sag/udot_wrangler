@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "udot-wrangler"
-version = "0.1.1"
+version = "0.1.2"
 description = "Network Wrangler parameters for UDOT"
 readme = "README.md"
 requires-python = ">=3.10"
