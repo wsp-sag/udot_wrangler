@@ -233,7 +233,7 @@ class UDOT_Parameters(Parameters):
             self.scratch_location, "make_complete_network_from_fixed_width_file.s"
         )
         self.output_dir = os.path.join(self.scratch_location)
-        self.output_epsg = 26915
+        self.output_epsg = 26912
         self.wrangler_epsg = 4269
 
         self.zones = 952
