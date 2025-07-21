@@ -6,9 +6,9 @@ from cube_wrangler import Parameters
 def get_base_dir(udot_wrangler_base_dir=os.getcwd()):
     d = udot_wrangler_base_dir
     for i in range(3):
-        if ".settings" in os.listdir(d):
-            WranglerLogger.info("udot Wrangler base directory set as: {}".format(d))
-            return d
+        if "settings" in os.listdir(d):
+            WranglerLogger.info("udot Wrangler base directory set as: {}".format(os.path.dirname(d)))
+            return os.path.dirname(d)
         d = os.path.dirname(d)
 
     msg = "Cannot find UDOT Wrangler base directory from {}, please input using keyword in parameters: `udot_wrangler_base_dir =` ".format(
@@ -72,7 +72,7 @@ class UDOT_Parameters(Parameters):
         if "settings_location" in kwargs:
             self.settings_location = kwargs.get("settings_location")
         else:
-            self.settings_location = os.path.join(self.base_dir, ".settings")
+            self.settings_location = os.path.join(self.base_dir, "udot_wrangler", "settings")
 
         if "scratch_location" in kwargs:
             self.scratch_location = kwargs.get("scratch_location")
