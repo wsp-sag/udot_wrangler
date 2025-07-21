@@ -50,3 +50,17 @@ Example prototype notebooks can be found in the .notebook folder. Examples inclu
 1. Create a base Network Wrangler scenario with input roadway network.
 2. Create Project Card skeletion with input CUBE LOG.
 3. Create a build scenario and apply project card, write out CUBE roadway network.
+
+The following cell in these notebooks requires users to define path to their local clones of `udot_wrangler` and `cube_wrangler`.
+```python
+udot_parameters = UDOT_Parameters(
+    udot_wrangler_base_dir = "path/to/your/local/udot/wrangler/folder",
+    cube_wrangler_base_dir = "path/to/your/local/cube/wrangler/folder",
+)
+```
+To do that, users can run the follow commands in the command prompt to make sure they have `udot_wrangler` and `cube_wrangler` folders locally
+```bash
+cd path to where you want to put wrangler
+git clone https://github.com/wsp-sag/udot_wrangler
+git clone https://github.com/network-wrangler/cube_wrangler
+```
