@@ -6,12 +6,27 @@ requires = [
 ]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["udot_wrangler"]
+
+[tool.setuptools.package-data]
+udot_wrangler = ["settings/*"]
+
 [project]
 name = "udot-wrangler"
-version = "0.1.2"
+version = "0.1.3"
 description = "Network Wrangler parameters for UDOT"
 readme = "README.md"
 requires-python = ">=3.10"
+authors = [
+    {name = "Sijia Wang", email = "sijia.wang@wsp.com"},
+]
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 dependencies = [
     "cube-wrangler",
     "ipykernel>=6.29.5",
