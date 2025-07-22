@@ -60,7 +60,7 @@ plugins:
 nav:
   - Home: index.md
   - API: api.md
-  - How To: how_to.md
+  - Workflow: workflow.md
   - Development: development.md
 
 extra:
