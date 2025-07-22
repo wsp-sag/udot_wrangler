@@ -8,7 +8,7 @@
       
       
       
-        <link rel="canonical" href="https://wsp-sag.github.io/udot_wrangler/how_to.html">
+        <link rel="canonical" href="https://wsp-sag.github.io/udot_wrangler/workflow.html">
       
       
         <link rel="prev" href="api.html">
@@ -22,7 +22,7 @@
     
     
       
-        <title>How To - UDOT Wrangler</title>
+        <title>Workflow - UDOT Wrangler</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to" class="md-skip">
+        <a href="#workflow-for-udot-team" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              How To
+              Workflow
             
           </span>
         </div>
@@ -269,13 +269,13 @@
   
   
     <li class="md-tabs__item md-tabs__item--active">
-      <a href="how_to.html" class="md-tabs__link">
+      <a href="workflow.html" class="md-tabs__link">
         
   
   
     
   
-  How To
+  Workflow
 
       </a>
     </li>
@@ -413,7 +413,7 @@
   
   
   <span class="md-ellipsis">
-    How To
+    Workflow
     
   </span>
   
@@ -421,12 +421,12 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="how_to.html" class="md-nav__link md-nav__link--active">
+      <a href="workflow.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    How To
+    Workflow
     
   </span>
   
@@ -449,36 +449,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#build-a-base-network-scenario-from-udot-cube-network" class="md-nav__link">
+  <a href="#step-1-build-a-base-network-scenario-from-udot-cube-network" class="md-nav__link">
     <span class="md-ellipsis">
-      Build a Base Network Scenario from UDOT CUBE Network
+      Step 1. Build a Base Network Scenario from UDOT CUBE Network
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-project-card-from-a-cube-log-file" class="md-nav__link">
+  <a href="#step-2-create-a-project-card-from-a-cube-log-file" class="md-nav__link">
     <span class="md-ellipsis">
-      Create A Project Card from A CUBE LOG File
+      Step 2. Create A Project Card from A CUBE LOG File
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#push-project-cards-to-a-registry" class="md-nav__link">
+  <a href="#step-3-push-project-cards-to-project-card-registry" class="md-nav__link">
     <span class="md-ellipsis">
-      Push Project Cards to A Registry
+      Step 3. Push Project Cards to Project Card Registry
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-a-build-network-scenario" class="md-nav__link">
+  <a href="#step-4-create-a-build-network-scenario" class="md-nav__link">
     <span class="md-ellipsis">
-      Create a Build Network Scenario
+      Step 4. Create a Build Network Scenario
     </span>
   </a>
   
@@ -533,20 +533,32 @@
   
 
 
-<h1 id="how-to">How To<a class="headerlink" href="#how-to" title="Permanent link"> ¶</a></h1>
-<h2 id="build-a-base-network-scenario-from-udot-cube-network">Build a Base Network Scenario from UDOT CUBE Network<a class="headerlink" href="#build-a-base-network-scenario-from-udot-cube-network" title="Permanent link"> ¶</a></h2>
+<h1 id="workflow-for-udot-team">Workflow for UDOT Team<a class="headerlink" href="#workflow-for-udot-team" title="Permanent link"> ¶</a></h1>
+<p>Prototype workflow notebooks can be found on the <a href="https://github.com/wsp-sag/udot_wrangler/tree/main/.notebook">UDOT Wrangler GitHub repository&rsquo;s notebook folder</a>.</p>
+<h2 id="step-1-build-a-base-network-scenario-from-udot-cube-network">Step 1. Build a Base Network Scenario from UDOT CUBE Network<a class="headerlink" href="#step-1-build-a-base-network-scenario-from-udot-cube-network" title="Permanent link"> ¶</a></h2>
 <p>You can find the example jupyter notebook <code>01-make-network-wrangler-files-from-cube.ipynb</code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">create a base scenario</p>
 <p>This step should only be run once to create the base scenario. Once created, all work should be performed on top of the base scenario.</p>
 </div>
-<h2 id="create-a-project-card-from-a-cube-log-file">Create A Project Card from A CUBE LOG File<a class="headerlink" href="#create-a-project-card-from-a-cube-log-file" title="Permanent link"> ¶</a></h2>
+<h2 id="step-2-create-a-project-card-from-a-cube-log-file">Step 2. Create A Project Card from A CUBE LOG File<a class="headerlink" href="#step-2-create-a-project-card-from-a-cube-log-file" title="Permanent link"> ¶</a></h2>
 <p>You can find the example jupyter notebook <code>02-make-project-cards-from-cube-logs.ipynb</code>.</p>
+<p>The following cell in this notebook requires users to define path to their local clones of <code>udot_wrangler</code> and <code>cube_wrangler</code>.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">udot_parameters</span> <span class="o">=</span> <span class="n">UDOT_Parameters</span><span class="p">(</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">udot_wrangler_base_dir</span> <span class="o">=</span> <span class="s2">&quot;path/to/your/local/udot/wrangler/folder&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">cube_wrangler_base_dir</span> <span class="o">=</span> <span class="s2">&quot;path/to/your/local/cube/wrangler/folder&quot;</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">)</span>
+</span></code></pre></div>
+To do that, users can run the follow commands in the command prompt to make sure they have <code>udot_wrangler</code> and <code>cube_wrangler</code> folders locally
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>path<span class="w"> </span>to<span class="w"> </span>where<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>put<span class="w"> </span>wrangler
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/wsp-sag/udot_wrangler
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/network-wrangler/cube_wrangler
+</span></code></pre></div></p>
 <div class="admonition tip">
 <p class="admonition-title">add project metadata to project card skeleton</p>
 <p>The Project Cards created by this notebook are &ldquo;skeleton&rdquo; in that they do not contain enough project meta information. User can open the skeletons and enter the information on <code>project</code>, <code>tags</code>, <code>dependencies</code>, and <code>notes</code>. See documentation from <a href="https://network-wrangler.github.io/projectcard/main/">ProjectCard</a></p>
 </div>
-<h2 id="push-project-cards-to-a-registry">Push Project Cards to A Registry<a class="headerlink" href="#push-project-cards-to-a-registry" title="Permanent link"> ¶</a></h2>
+<h2 id="step-3-push-project-cards-to-project-card-registry">Step 3. Push Project Cards to Project Card Registry<a class="headerlink" href="#step-3-push-project-cards-to-project-card-registry" title="Permanent link"> ¶</a></h2>
 <p>When two people coding network changes in parallel in CUBE, it is possible that they create new links and nodes without overlapping IDs. However, overlapping IDs are not allow in Network Wrangler by design. To avoid overlapping IDs, users should push the project cards they generated into a Project Card Registry. A project card registry does the following:</p>
 <ul>
 <li>Identifies Project Cards that add roadway or transit links to the network.</li>
@@ -558,7 +570,11 @@
 <p class="admonition-title">add project cards to registry</p>
 <p>We have set up a registry for the Cache county: <a href="https://github.com/wsp-sag/cache_project_card_registry">cache_project_card_registry</a>, and have staged some real project cards in the <code>stage</code> branch. Users can continue to add project cards to the <code>stage</code> branch or create another branch.</p>
 </div>
-<h2 id="create-a-build-network-scenario">Create a Build Network Scenario<a class="headerlink" href="#create-a-build-network-scenario" title="Permanent link"> ¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">final project cards</p>
+<p>Users should use the project cards that are updated by the project card registry as final project cards for production.</p>
+</div>
+<h2 id="step-4-create-a-build-network-scenario">Step 4. Create a Build Network Scenario<a class="headerlink" href="#step-4-create-a-build-network-scenario" title="Permanent link"> ¶</a></h2>
 <p>You can find the example jupyter notebook <code>03-apply-project-cards-and-create-buid-network.ipynb</code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">mix and match project cards</p>
