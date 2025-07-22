@@ -13,7 +13,7 @@ UDOT Wrangler does require Python 3.7+. (Note: Recommend Python version: 3.10) I
 
     UDOT Wrangler has been fully tested with 3.10. Using the latest version of Python 3.13 may have issues with any updated APIs or dependencies. If you would like to install Python 3.10. You can do so from the official Python release: https://www.python.org/downloads/. It should take care of installing pip for you.
 
-??? warning "installing conda?"
+!!! tip "installing conda?"
 
     For conda users, apologies that UDOT Wrangler has not yet been published to conda distribution channels. You will not be able to install via your common `conda install ...` command. But you could use the From Clone option describes in the Installation section below.
 
