@@ -48,8 +48,8 @@ pip install -e .
 ## Example Notebooks
 Example prototype notebooks can be found in the .notebook folder. Examples include
 1. Create a base Network Wrangler scenario with input roadway network.
-2. Create Project Card skeletion with input CUBE LOG.
-3. Create a build scenario and apply project card, write out CUBE roadway network.
+2. Create Project Card skeleton with input CUBE LOG.
+3. Create a build scenario and apply project card, write out the build Network Wrangler scenario as well as the build CUBE roadway network.
 
 The following cell in these notebooks requires users to define path to their local clones of `udot_wrangler` and `cube_wrangler`.
 ```python
