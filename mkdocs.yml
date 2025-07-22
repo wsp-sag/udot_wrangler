@@ -1,0 +1,87 @@
+site_name: "UDOT Wrangler"
+site_url: https://wsp-sag.github.io/udot_wrangler
+repo_url: https://github.com/wsp-sag/udot_wrangler
+
+use_directory_urls: false
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.indexes
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: grey
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  custom_dir: overrides
+
+plugins:
+  - autorefs
+  - awesome-pages
+  - include-markdown:
+      opening_tag: "{!"
+      closing_tag: "!}"
+  - mermaid2
+  - mike
+  - mkdocs-jupyter:
+      include_source: True
+  - mkdocstrings:
+      default_handler: python
+      enable_inventory: true
+      handlers:
+        python:
+          paths: [.]
+          selection:
+            new_path_syntax: true
+          rendering:
+            show_root_heading: true
+            show_source: true
+            heading_level: 3
+#      custom_templates: templates
+  - search
+  - table-reader
+
+nav:
+  - Home: index.md
+  - API: api.md
+  - How To: how_to.md
+  - Development: development.md
+
+extra:
+  version:
+    provider: mike
+    default: latest
+
+extra_css:
+  - https://use.fontawesome.com/releases/v5.13.0/css/all.css
+  - css/extra.css
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+  - meta
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.smartsymbols
+  - smarty
+  - tables
+  - toc:
+      # insert a blank space before the character
+      permalink: " ¶"
