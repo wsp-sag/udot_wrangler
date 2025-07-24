@@ -15,7 +15,7 @@ UDOT Wrangler does require Python 3.7+. (Note: Recommend Python version: 3.10) I
 
 !!! tip "installing conda?"
 
-    For conda users, apologies that UDOT Wrangler has not yet been published to conda distribution channels. You will not be able to install via your common `conda install ...` command. But you could use the From Clone option describes in the Installation section below.
+    For conda users, apologies that UDOT Wrangler has not yet been published to conda distribution channels. You will not be able to install via your common `conda install ...` command. But you could use `pip install ...`.
 
 ## Installation
 
@@ -23,15 +23,21 @@ UDOT Wrangler does require Python 3.7+. (Note: Recommend Python version: 3.10) I
 
 Create and/or activate the virtual environment where you want to install UDOT Wrangler.
 
-!!! example "Option 1. Create a new Python virtual environment for using pip"
+!!! example "Option 1. Create a new Python virtual environment using PIP"
 
     ```bash
     python -m venv udot_wrangler_env
     udot_wrangler_env\Script\activate
-    pip install udot-wrangler
     ```
 
-!!! example "Option 2. Use Python package and project manager such as UV"
+!!! example "Option 2. Create a new Python virtual environment using Conda"
+
+    ```bash
+    conda create -n udot_wrangler_env python=3.10
+    conda activate udot_wrangler_env
+    ```
+
+!!! example "Option 3. Use Python package and project manager such as UV"
 
     If you care about speed and dependency lock, UV is a better option than pip.
 
@@ -43,7 +49,7 @@ Create and/or activate the virtual environment where you want to install UDOT Wr
 UDOT Wrangler is available on PyPI.
 
 #### Latest Official Version
-Users can install via standard pip command. In the activated Python environment created in Step 1, type:
+Users can install via the standard pip command. In the activated Python environment created in Step 1, type:
 ```bash
 pip install udot-wrangler
 ```
@@ -92,6 +98,13 @@ To get a feel for the API and using project cards, please refer to the prototype
 To start the notebook, open a command line in the udot_wrangler top-level directory and type:
 
 `jupyter notebook`
+
+When launching jupyter notebook from conda, you may want to set the following:
+
+```bash
+conda install ipykernel
+python -m ipykernel install --user --name=udot_wrangler_env --display-name "Python (udot_wrangler_env)"
+```
 
 ## Contributing
 
