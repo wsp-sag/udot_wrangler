@@ -27,7 +27,7 @@ Create and/or activate the virtual environment where you want to install UDOT Wr
 
     ```bash
     python -m venv udot_wrangler_env
-    udot_wrangler_env\Script\activate
+    udot_wrangler_env\Scripts\activate
     ```
 
 !!! example "Option 2. Create a new Python virtual environment using Conda"
