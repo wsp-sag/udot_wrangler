@@ -7,11 +7,11 @@ UDOT Wrangler is a Python library for UDOT-related paramters and utilities with 
 
 ## System Requirements
 
-UDOT Wrangler does require Python 3.7+. (Note: Recommend Python version: 3.10) If you have a different version of Python installed (e.g. from ArcGIS), PIP or a similar virtual environment manager can care of installing it for you in the installation instructions below.
+We recommend using Python 3.10 for UDOT Wrangler. If you have a different version of Python installed (e.g. from ArcGIS), PIP or a Python environment manager such as uv can take care of installing it for you in the installation instructions below.
 
 !!! tip "installing Python"
 
-    UDOT Wrangler has been fully tested with 3.10. Using the latest version of Python 3.13 may have issues with any updated APIs or dependencies. If you would like to install Python 3.10. You can do so from the official Python release: https://www.python.org/downloads/. It should take care of installing pip for you.
+    UDOT Wrangler has been fully tested with 3.10. Using the latest version of Python 3.13 may have compatibility issues with any updated APIs or dependencies. If you would like to install Python 3.10. You can do so from the official Python release: https://www.python.org/downloads/. It should take care of installing pip for you.
 
 !!! tip "installing conda?"
 
@@ -23,42 +23,62 @@ UDOT Wrangler does require Python 3.7+. (Note: Recommend Python version: 3.10) I
 
 Create and/or activate the virtual environment where you want to install UDOT Wrangler.
 
-!!! example "Option 1. Create a new Python virtual environment using PIP"
+!!! example "Option 1 (RECOMMENDED). Use a modern Python manager such as UV"
+
+    If you care about speed and dependency lock, UV is a better option than others. But first, you need to install UV, see detailed instructions here: https://docs.astral.sh/uv/getting-started/installation/.
 
     ```bash
-    python -m venv udot_wrangler_env
-    udot_wrangler_env\Scripts\activate
+    # Run the installer. Please review the printed message after installation.
+    powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+    # Add uv to PATH
+    $env:PATH = "$env:USERPROFILE\.local\bin;$env:Path"
     ```
 
-!!! example "Option 2. Create a new Python virtual environment using Conda"
+    To verify that UV is installed correctly, open a new Command Prompt (not Anaconda Prompt) and run the following command.
+    ```bash
+    uv --version
+    ```
+
+    Then you can create and activate a new Python environment with UV. In the Command Prompt, the following commands will create a new Python environment with Python 3.10.
+
+    ```bash
+    # make a directory for your uv environment
+    mkdir udot_wrangler_env
+    cd udot_wrangler_env
+    uv init --python 3.10
+    ```
+
+!!! example "Option 2 (Most Familiar to Python Users). Create a new Python virtual environment using Conda"
 
     ```bash
     conda create -n udot_wrangler_env python=3.10
     conda activate udot_wrangler_env
     ```
 
-!!! example "Option 3. Use Python package and project manager such as UV"
-
-    If you care about speed and dependency lock, UV is a better option than pip.
+!!! example "Option 3 (For Users Who Prefer PIP). Create a new Python virtual environment using PIP"
 
     ```bash
-    uv init
+    python -m venv udot_wrangler_env
+    udot_wrangler_env\Scripts\activate
     ```
 
 ### Step 2. Install UDOT Wrangler and its Dependencies
 UDOT Wrangler is available on PyPI.
 
-#### Latest Official Version
-Users can install via the standard pip command. In the activated Python environment created in Step 1, type:
+#### From Latest Official Release on PyPI
+If users use uv in Step 1, they will install UDOT Wrangler via uv. In a Command Prompt:
 ```bash
-pip install udot-wrangler
-```
-
-Users can also install via UV.
-```bash
-uv add udot-wrangler
+# make sure you are in the directory that you created for your uv environment in Step 1
+cd path\to\udot_wrangler_env
+uv add udot-wrangler --prerelease=allow
 # if `network-wrangler` is a prerelease
 # uv add udot-wrangler --prerelease=allow
+```
+
+If users use Conda or PIP in Step 1, they can install UDOT Wrangler via the standard pip command. In the activated Python environment created in Step 1, type:
+```bash
+pip install udot-wrangler
 ```
 
 #### From GitHub
@@ -68,7 +88,7 @@ pip install git+https://github.com/wsp-sag/udot_wrangler.git@main#egg=udot_wrang
 
 If you wanted to install from a specific tag/version number or branch, replace `@main` with `@<branchname>`  or `@tag`
 
-#### From Clone
+#### From Local Clone
 
 If you are going to be working on UDOT Wrangler locally, you might want to clone it to your local machine and install it from the clone.  The -e will install it in [editable mode](https://pip.pypa.io/en/stable/reference/pip_install/?highlight=editable#editable-installs).
 
@@ -88,8 +108,17 @@ cd udot_wrangler
 pip install -e .
 ```
 
+### Step 3. Getting Ready to Run Example Notebooks
+The 02 and 03 example notebooks requires the user to define paths to their local clones of udot_wrangler and cube_wrangler. To do that, users can run the following commands in Command Prompt to make sure they have udot_wrangler and cube_wrangler folders locally. If you have already cloned them in Step 2, you can skip this step.
+
+```bash
+cd path to where you want to put wrangler
+git clone https://github.com/wsp-sag/udot_wrangler
+git clone https://github.com/network-wrangler/cube_wrangler
+```
+
 ### Common Installation Issues
-TBD
+TBD (please give us feedback on any installation issues you encounter so that we can document them here!)
 
 ## Quickstart
 
