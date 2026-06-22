@@ -108,7 +108,7 @@ cd udot_wrangler
 pip install -e .
 ```
 
-### Step 3. Getting Ready to Run Example Notebooks
+### Step 3. Get Ready to Run Example Notebooks
 The 02 and 03 example notebooks requires the user to define paths to their local clones of udot_wrangler and cube_wrangler. To do that, users can run the following commands in Command Prompt to make sure they have udot_wrangler and cube_wrangler folders locally. If you have already cloned them in Step 2, you can skip this step.
 
 ```bash
